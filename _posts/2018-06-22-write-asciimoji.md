@@ -2,7 +2,7 @@
 layout:     post
 title:      "Write-ASCIImoji"
 date:       2018-06-22 23:30:00 -0800
-categories: powershell slack mattermost
+tags:       [powershell, slack, mattermost]
 ---
 I was inspired to annoy some admins this evening by writing a script to generate Slack/MatterMost emoji blocks, and since I've been on a PowerShell kick lately I decided to write it in that.  
 <!--more-->
