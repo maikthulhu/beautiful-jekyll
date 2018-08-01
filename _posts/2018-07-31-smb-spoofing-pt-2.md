@@ -19,7 +19,6 @@ Extract the source, open an administrative Powershell session, and navigate to t
 ![Inveigh extracted and powershell window](/img/inveigh-extracted.jpg)
 
 Next import the Inveigh Powershell module so we can use it as in the examples.  Run the command below.
-  
 `Import-Module .\Inveigh.psm1`
   
 Respond to the prompts asking if you really want to run the scripts.  I had to acknowledge three such prompts.
@@ -27,7 +26,6 @@ Respond to the prompts asking if you really want to run the scripts.  I had to a
 ![Import inveigh](/img/confirm-inveigh-import.jpg)
   
 And that's pretty much it.  Now we can run Inveigh with the command below (as per the example in the readme) and see the pretty output.
-
 `Invoke-Inveigh -ConsoleOutput Y -NBNS Y -mDNS Y -HTTPS Y -Proxy Y`
 
 ![Invoke-Inveigh](/img/invoke-inveigh.jpg)
@@ -46,6 +44,12 @@ This looks at least a little more promising, yes?  Let's see what Inveigh has to
 ![Inveigh captured hash](/img/inveigh-captured-hash.jpg)
 
 Much better, thank you ~~Aziz~~ Windows.
+
+As we can see, Inveigh displays two captured hashes.  One as the client attempts the SMB mount, and another as Windows attempts an HTTP request for the share.  The hashes do differ, but copying/pasting these into a file and then throwing it into john nets us the password once more.
+
+![John cracking Inveigh hashes](/img/john-crack-inveigh-hashes.jpg)
+
+Interestingly it's only able to crack one of the hashes.  I'm not sure why here, but perhaps we'll explore that more in part 3.
   
 ### Conclusion
 So there wasn't much more to this example than there was to the Responder example, and thus concludes a very basic look into the usage of Responder and Inveigh.  In part 3 of this series I'll delve a little deeper into some of the advanced features of both tools.  This is the first I've played with them so inevitably I'll get some things wrong along the way, but that's how we learn.  Thanks for reading!
