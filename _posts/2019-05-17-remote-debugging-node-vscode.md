@@ -8,7 +8,7 @@ tags:       [vscode, node, debugging]
 ## Introduction
 While working on a CTF-style challenge recently I was introduced to Node.js. Now I have dealt with it before, and have done my share of web development using JavaScript so I'm not stranger to its intricacies, but this was the first time I've dealt with it server-side.
   
-This challenge, specifically, had an implementation of safe-eval version 3.0.0. If you're familiar with it, you may know that this has a well-known vulnerability ([CVE-2017-16088](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-16088)) which allows a sandbox escape. Now the point of this post wasn't to talk about this challenge or the vulnerability, but rather how I ended up identifying the next step in the exploitation process using remote debugging with VS Code.
+This challenge, specifically, had an implementation of safe-eval version 0.3.0. If you're familiar with it, you may know that this has a well-known vulnerability ([CVE-2017-16088](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-16088)) which allows a sandbox escape. Now the point of this post wasn't to talk about this challenge or the vulnerability, but rather how I ended up identifying the next step in the exploitation process using remote debugging with VS Code.
   
 ## Getting Started
 
@@ -113,15 +113,15 @@ Ultimately this allows our VS Code debugger to tunnel from its own `localhost:92
 
 ## Debugging safe-eval
 
-Now back to our regularly scheduled program. The following commands set up a quick environment for me to remotely test and debug `safe-eval@3.0.0`.
+Now back to our regularly scheduled program. The following commands set up a quick environment for me to remotely test and debug `safe-eval@0.3.0`.
   
 Create a folder and `cd` into it.
   
 `mkdir debugging && cd $_`
   
-Install `safe-eval` version 3.0.0.
+Install `safe-eval` version 0.3.0.
   
-`npm install safe-eval@3.0.0`
+`npm install safe-eval@0.3.0`
   
 Create a test file to debug with. I made index.js with the following contents.
 
