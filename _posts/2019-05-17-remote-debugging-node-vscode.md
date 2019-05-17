@@ -130,7 +130,7 @@ safeEval = require('safe-eval');
   
 context = { bob: { alice: 'secret' } };
 
-safeEval("return 1+1);", context);
+safeEval("return 1+1;", context);
 ```
   
 Invoke Node.js and enable debugging, but have it break immediately for the debugger.
